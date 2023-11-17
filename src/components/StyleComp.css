@@ -1,0 +1,22 @@
+.link_canvas {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.link_section {
+  display: flex;
+}
+
+.qrcanvas {
+  display: grid;
+}
+
+.qrcode {
+  display: flex;
+  align-self: center;
+}
+
+.link_input {
+  width: 100%;
+}

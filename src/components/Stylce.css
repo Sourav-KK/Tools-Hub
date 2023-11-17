@@ -1,0 +1,16 @@
+.main{
+    display: grid;   
+}
+
+.hh1{
+    grid-column-start: 1;
+    grid-column-end: 5;
+    background:red;
+}
+
+#content{
+    overflow: hidden;
+    transition: height 200ms;
+    display: flex;
+}
+

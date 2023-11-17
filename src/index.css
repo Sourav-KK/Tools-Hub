@@ -1,0 +1,19 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&family=PT+Sans&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap"); */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  background-color: #247f4f;
+  height: fit-content;
+}
+
+* {
+  padding-left: 2px;
+  padding-right: 2px;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
