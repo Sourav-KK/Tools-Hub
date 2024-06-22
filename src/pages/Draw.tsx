@@ -1,10 +1,10 @@
-import Navlinks from "../components/header/navlinks";
+import NavBar from "../components/NavBar/NavBar";
 import { Excalidraw } from "@excalidraw/excalidraw";
 
 const Draw = () => {
   return (
     <>
-      <Navlinks />
+      <NavBar />
       <div className="div" style={{ height: "500px" }}>
         <Excalidraw />
       </div>

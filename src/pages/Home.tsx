@@ -1,12 +1,12 @@
-import Navlinks from "../components/header/navlinks";
-import Body from "../components/homepage/body";
-
+import NavBar from "../components/NavBar/NavBar";
+import HomeBody from "../components/homepage/HomeBody";
+import "../Styles/Navbar.css";
 const Home = () => {
   return (
     <>
-      <Navlinks />
+      <NavBar />
 
-      <Body />
+      <HomeBody />
     </>
   );
 };

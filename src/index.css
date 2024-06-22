@@ -5,13 +5,15 @@
 @tailwind utilities;
 
 :root {
-  background-color: #247f4f;
+  background-color: #09ad3d;
   height: fit-content;
 }
 
 * {
-  padding-left: 2px;
-  padding-right: 2px;
+  padding: 4px;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
 
 ::-webkit-scrollbar {

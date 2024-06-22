@@ -35,26 +35,29 @@ const Design: React.FC<DesignProp> = ({
       />
 
       {openDesign && (
-        <div className="grid gap-2">
-          <div>
-            <label>
-              Size(px):
-              <br />
+        <div className="grid grid-cols-1 md:grid-cols-3 bg-gray-200 rounded-md ">
+          <div className="grid grid-cols-1 justify-items-center p-0">
+            <div className="grid  w-full items-center">
+              <h3 className="text-center 1">Size (px)</h3>
+            </div>
+            <div className="grid justify-items-center w-full border-">
               <input
                 type="number"
                 onChange={(e) => setSize(parseInt(e.target.value, 10) || 0)}
                 value={size}
-                className="border-transparent focus:border-b-[#03A9F4] focus:outline-none"
+                className="border-transparent focus:border-b-[#03A9F4] focus:outline-none w-1/2 text-center rounded-md"
               />
-            </label>
+            </div>
           </div>
 
-          <div>
-            <label>
-              Error Level:
-              <br />
+          <div className="grid grid-cols-1 justify-items-center  ">
+            <div className="flex">
+              <h3> Error Level:</h3>
+            </div>
+
+            <div className="grid justify-items-center">
               <select
-                className="border-transparent focus:border-b-[#03A9F4] focus:outline-none"
+                className="border-transparent focus:border-b-[#03A9F4] focus:outline-none ext-center rounded-md"
                 onChange={(e) => setLevel(e.target.value)}
                 value={level}
               >
@@ -63,15 +66,17 @@ const Design: React.FC<DesignProp> = ({
                 <option value="Q">Q</option>
                 <option value="H">H</option>
               </select>
-            </label>
+            </div>
           </div>
 
-          <div>
-            <label>
-              Margin Size:
-              <br />
+          <div className="grid grid-cols-1 justify-items-center  ">
+            <div className="flex">
+              <h3> Margin Size:</h3>
+            </div>
+
+            <div className="grid justify-items-center">
               <input
-                className="border-transparent focus:border-b-[#03A9F4] focus:outline-none"
+                className="border-transparent focus:border-b-[#03A9F4] focus:outline-none rounded-md w-1/2 text-center"
                 type="number"
                 step={1}
                 value={marginSize}
@@ -79,7 +84,7 @@ const Design: React.FC<DesignProp> = ({
                   setMarginSize(Math.floor(e.target.valueAsNumber))
                 }
               />
-            </label>
+            </div>
           </div>
         </div>
       )}

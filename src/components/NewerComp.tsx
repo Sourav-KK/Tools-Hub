@@ -139,7 +139,6 @@ const NewerComp: React.FC = () => {
   };
 
   const downloadQR = () => {
-    console.log("hlloo value");
     const qrElement = document.querySelector("#capture");
     if (qrElement) {
       html2canvas(qrElement)?.then((canvas) => {

@@ -22,21 +22,20 @@ const Content: React.FC<ContentProps> = ({
         toggleComp={toggleContent}
         compActive={contentActive}
         openComp={openContent}
-        title="ENTER CONTENT"
+        title="URL"
         icon={Globe2}
       />
 
       {openContent && (
-        <div className=" pl-2 transition ease-in-out delay-200 ">
-          <label>
-            Value:
-            <br />
+        <div className="pl-2 transition ease-in-out delay-200 bg-gray-200 rounded-md p-4 md:flex ">
+          <h3 className="font-bold text-sm md:text-lg">Value:</h3>
+          <div className="flex w-full justify-center  items-center">
             <input
               onChange={(e) => setValue(e.target.value)}
               value={value}
-              className="w-11/12 border-transparent focus:border-b-[#03A9F4] focus:outline-none h-5"
+              className="w-11/12 border-transparent p-3 focus:border-b-[#03A9F4] focus:outline-none h-5 rounded-sm"
             />
-          </label>
+          </div>
         </div>
       )}
     </>

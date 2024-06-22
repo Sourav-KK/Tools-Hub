@@ -1,11 +1,11 @@
 // import "./QRGen.css";
-import Navlinks from "../../components/header/navlinks";
-import MainComp from "../../components/main/MainComp";
+import NavBar from "../../components/NavBar/NavBar";
+import MainComp from "../../components/QRComp/MainComp";
 
 const QRGen = () => {
   return (
     <>
-      <Navlinks />
+      <NavBar />
 
       <MainComp />
     </>

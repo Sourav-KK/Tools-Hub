@@ -1,30 +1,7 @@
 import { Image } from "lucide-react";
 import ComonComp from "./ComonComp";
+import { ImageProps } from "../../Utilities/Interfaces";
 
-interface ImageProps {
-  toggleImage: () => void;
-  openImage: boolean;
-  includeImage: boolean;
-  setIncludeImage: (value: boolean) => void;
-  setImageSrc: (value: string) => void;
-  imageSrc: string;
-  imageW: number;
-  setImageW: (value: number) => void;
-  setImageH: (value: number) => void;
-  imageOpacity: number;
-  setImageOpacity: (value: number) => void;
-  centerImage: boolean;
-  setCenterImage: (value: boolean) => void;
-  imageX: number;
-  size: number;
-  setImageX: (value: number) => void;
-  imageY: number;
-  imageH: number;
-  setImageY: (value: number) => void;
-  imageExcavate: boolean;
-  setImageExcavate: (value: boolean) => void;
-  imageActive: boolean;
-}
 const ImageComp: React.FC<ImageProps> = ({
   toggleImage,
   openImage,
@@ -45,8 +22,8 @@ const ImageComp: React.FC<ImageProps> = ({
   imageY,
   imageH,
   setImageY,
-  imageExcavate,
-  setImageExcavate,
+  // imageExcavate,
+  // setImageExcavate,
   imageActive,
 }) => {
   return (
@@ -59,129 +36,130 @@ const ImageComp: React.FC<ImageProps> = ({
         icon={Image}
       />
       {openImage && (
-        <>
-          <div>
-            <label>
-              Include Image:
+        <div className="bg-gray-200 rounded-md p-4 flex flex-col">
+          <div className="flex flex-row  text-lg font-bold self-center border-b-2 ">
+            <div className="flex">
+              <h3>Include Image:</h3>
+            </div>
+
+            <div className="flex">
               <input
-                className="border-transparent focus:border-b-[#03A9F4] focus:outline-none"
+                className="border-transparent focus:border-b-[#03A9F4] focus:outline-none p-4 "
                 type="checkbox"
                 checked={includeImage}
                 onChange={(e) => setIncludeImage(e.target.checked)}
               />
-            </label>
+            </div>
           </div>
 
           <fieldset disabled={!includeImage} className="grid gap-2">
-            <legend>Image Settings</legend>
+            <legend className="text-lg font-bold underline underline-offset-4">
+              Image Settings
+            </legend>
 
-            <div className="">
-              <label>
-                Source:
-                <br />
-                <input
-                  className="border-transparent focus:border-b-[#03A9F4] focus:outline-none"
-                  type="text"
-                  onChange={(e) => setImageSrc(e.target.value)}
-                  value={imageSrc}
-                />
-              </label>
+            {/* source */}
+            <div className="grid grid-cols-1 md:grid-cols-4 justify-start border-2 border-stone-700">
+              <h3 className="col-span-1 font-bold text-base">Source:</h3>
+              <input
+                className="border-transparent focus:border-b-[#03A9F4] focus:outline-none p-1 rounded-md w-full col-span-3"
+                type="text"
+                onChange={(e) => setImageSrc(e.target.value)}
+                value={imageSrc}
+              />
             </div>
-            <div>
-              <label>
-                Image Width: {imageW}
-                <br />
+
+            {/* width + heigth + opacity  */}
+
+            <div className="grid grid-col-1 md:grid-cols-3 border-2 border-stone-700">
+              <div className="grid grid-cols-2 md:grid-cols-1 place-items-center">
+                <h3>Width:</h3>
+
                 <input
-                  className="border-transparent focus:border-b-[#03A9F4] focus:outline-none"
+                  className="border-transparent focus:border-b-[#03A9F4] focus:outline-none w-8 text-center rounded-md"
                   type="number"
                   value={imageW}
                   onChange={(e) => setImageW(parseInt(e.target.value, 10))}
                 />
-              </label>
-            </div>
-            <div>
-              <label>
-                Image Height: {imageH}
-                <br />
+              </div>
+
+              <div className="grid grid-cols-2 md:grid-cols-1 place-items-center">
+                <h3>Height:</h3>
+
                 <input
-                  className="border-transparent focus:border-b-[#03A9F4] focus:outline-none"
+                  className="border-transparent focus:border-b-[#03A9F4] focus:outline-none w-8 text-center rounded-md"
                   type="number"
                   value={imageH}
                   onChange={(e) => setImageH(parseInt(e.target.value, 10))}
                 />
-              </label>
-            </div>
-            <div>
-              <label>
-                Image Opacity: {imageOpacity}
-                <br />
+              </div>
+
+              <div className="grid grid-cols-2 md:grid-cols-1 place-items-center">
+                <h3>Opacity:</h3>
                 <input
-                  className="border-transparent focus:border-b-[#03A9F4] focus:outline-none"
+                  className="border-transparent focus:border-b-[#03A9F4] focus:outline-none w-8 text-center rounded-md"
                   type="number"
                   value={imageOpacity}
                   step="0.1"
                   onChange={(e) => setImageOpacity(Number(e.target.value))}
                 />
-              </label>
+              </div>
             </div>
 
-            <div>
-              <label>
-                Center Image:
-                <br />
+            {/* centering */}
+            <div className="flex justify-center">
+              {/* <legend className="text-center font-bold">Image Settings</legend> */}
+            </div>
+            <div className="border-2 border-stone-700">
+              <div className="flex gap-x-5 justify-center border-b-2 border-stone-500">
+                <h3>Center Image:</h3>
                 <input
                   className="border-transparent focus:border-b-[#03A9F4] focus:outline-none"
                   type="checkbox"
                   checked={centerImage}
                   onChange={(e) => setCenterImage(e.target.checked)}
                 />
-              </label>
+              </div>
+
+              <fieldset disabled={centerImage}>
+                <div className="grid grid-cols-1 md:grid-cols-2 items-center">
+                  <div className="grid grid-cols-1 place-items-center">
+                    <label>
+                      Image X: {imageX}
+                      <br />
+                      <input
+                        className="border-transparent focus:border-b-[#03A9F4] focus:outline-none w-2/3"
+                        type="range"
+                        min={0}
+                        max={size - imageW}
+                        value={imageX}
+                        onChange={(e) =>
+                          setImageX(parseInt(e.target.value, 10))
+                        }
+                      />
+                    </label>
+                  </div>
+
+                  <div className="grid grid-cols-1 place-items-center">
+                    <label>
+                      Image Y: {imageY}
+                      <br />
+                      <input
+                        className="border-transparent focus:border-b-[#03A9F4] focus:outline-none w-2/3"
+                        type="range"
+                        min={0}
+                        max={size - imageH}
+                        value={imageY}
+                        onChange={(e) =>
+                          setImageY(parseInt(e.target.value, 10))
+                        }
+                      />
+                    </label>
+                  </div>
+                </div>
+              </fieldset>
             </div>
-            <fieldset disabled={centerImage}>
-              <legend>Image Settings</legend>
-              <div>
-                <label>
-                  Image X: {imageX}
-                  <br />
-                  <input
-                    className="border-transparent focus:border-b-[#03A9F4] focus:outline-none"
-                    type="range"
-                    min={0}
-                    max={size - imageW}
-                    value={imageX}
-                    onChange={(e) => setImageX(parseInt(e.target.value, 10))}
-                  />
-                </label>
-              </div>
-              <div>
-                <label>
-                  Image Y: {imageY}
-                  <br />
-                  <input
-                    className="border-transparent focus:border-b-[#03A9F4] focus:outline-none"
-                    type="range"
-                    min={0}
-                    max={size - imageH}
-                    value={imageY}
-                    onChange={(e) => setImageY(parseInt(e.target.value, 10))}
-                  />
-                </label>
-              </div>
-            </fieldset>
-            {/* <div>
-              <label>
-                Excavate ("dig" foreground to nearest whole module):
-                <br />
-                <input
-                  className="border-transparent focus:border-b-[#03A9F4] focus:outline-none"
-                  type="checkbox"
-                  checked={imageExcavate}
-                  onChange={(e) => setImageExcavate(e.target.checked)}
-                />
-              </label>
-            </div> */}
           </fieldset>
-        </>
+        </div>
       )}
     </>
   );
