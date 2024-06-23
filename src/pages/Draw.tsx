@@ -1,13 +1,16 @@
+import DrawCanvas from "../components/Canvas/DrawCanvas";
 import NavBar from "../components/NavBar/NavBar";
-import { Excalidraw } from "@excalidraw/excalidraw";
+// import { Excalidraw } from "@excalidraw/excalidraw";
 
 const Draw = () => {
   return (
     <>
       <NavBar />
-      <div className="div" style={{ height: "500px" }}>
+      {/* <div className="div" style={{ height: "500px" }}>
         <Excalidraw />
-      </div>
+      </div> */}
+
+      <DrawCanvas />
     </>
   );
 };
